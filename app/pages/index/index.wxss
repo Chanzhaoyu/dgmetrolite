@@ -1,0 +1,205 @@
+.m-slide {
+  width: 100%;
+  height: 180rpx;
+  overflow: hidden;
+  background: #fff;
+}
+
+.m-slide image {
+  width: 100%;
+  height: 180rpx;
+}
+
+.g-header {
+  padding: 30rpx;
+  background: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+  transform: translateY(-20rpx);
+}
+
+.pick-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  padding: 33rpx 30rpx;
+}
+
+.pick-wrap .name {
+  color: #444;
+  font-size: 28rpx;
+}
+
+.pick-wrap .intro {
+  color: #000;
+  font-size: 30rpx;
+  flex: 1;
+  padding: 0 30rpx 0 60rpx;
+  overflow: hidden;
+}
+
+.line {
+  margin-bottom: 15rpx;
+}
+
+.g-header image {
+  width: 13rpx;
+  height: 20rpx;
+}
+
+.g-main {
+  background: #fff;
+  padding: 0 30rpx;
+}
+
+.m-tab {
+  border-bottom: 2rpx solid #ededed;
+  display: flex;
+  margin: 0 -30rpx;
+}
+
+.tab-list {
+  position: relative;
+  width: 25%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.tab-active {
+  color: #afca35;
+}
+
+.tab-active:after {
+  content: "";
+  display: block;
+  width: 80rpx;
+  height: 6rpx;
+  background: #afca35;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.m-tab-main {
+  min-height: 100rpx;
+}
+
+/* 地图 */
+#map{
+  margin: 30rpx 0;
+  width: 100%;
+  height: 240rpx;
+}
+
+.pilot{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  background: #afca35;
+  text-align: center;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  letter-spacing: 5rpx;
+}
+
+/* 信息类 */
+
+.l-infomation .m-group {
+  position: relative;
+  padding: 40rpx 0;
+}
+
+.l-infomation .title {
+  font-size: 32rpx;
+  color: #222;
+  line-height: 1.7;
+}
+
+.l-infomation .subtitle {
+  color: #555;
+  margin-bottom: 25rpx;
+  font-size: 28rpx;
+}
+
+.l-infomation .date-wrap {
+  color: #888;
+  line-height: 1.8;
+}
+
+.l-infomation .date-wrap image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 6rpx;
+}
+
+.toiler {
+  color: #888;
+  margin-top: 15rpx;
+}
+
+.map-mark {
+  position: absolute;
+  right: 0;
+  top: 40rpx;
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+}
+
+.map-mark image {
+  width: 30rpx;
+  height: 42rpx;
+}
+
+/* 出口 */
+
+.l-exit scroll-view{
+  height: calc(100vh - 250px);
+}
+
+.exit-list {
+  padding: 30rpx 0;
+  border-bottom: 2rpx dashed #ededed;
+}
+
+.exit-hd {
+  background: #f4f4f4;
+  position: relative;
+  color: #888;
+  padding: 20rpx 10rpx 20rpx 65rpx;
+  line-height: 1;
+  margin-bottom: 20rpx;
+}
+
+.exit-hd .num {
+  color: #afca35;
+  font-size: 60rpx;
+  position: absolute;
+  left: 10rpx;
+  top: 13rpx;
+}
+
+.exit-item {
+  line-height: 60rpx;
+}
+
+/* 公车 */
+.l-bus .m-group{
+  padding: 30rpx 0;
+}
+
+/* 版权 */
+.copyright{
+  position: fixed;
+  left: 0;
+  bottom: 20rpx;
+  width: 100%;
+  color: #d3d3d3;
+  text-shadow: 2rpx 2rpx 2rpx #fff;
+  text-align: center;
+  font-size: 24rpx;
+}

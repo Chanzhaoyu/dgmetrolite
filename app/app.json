@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#afca35",
+    "navigationBarTitleText": "东莞地铁信息",
+    "navigationBarTextStyle":"white"
+  }
+}

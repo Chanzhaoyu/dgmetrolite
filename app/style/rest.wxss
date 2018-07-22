@@ -1,0 +1,18 @@
+.clearfix::before, .clearfix::after {
+  content: "";
+  display: table;
+}
+
+image {
+  vertical-align: middle;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.main {
+  color: #333;
+  font: normal 24rpx/1.45 'Microsoft Yahei', Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}

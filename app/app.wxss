@@ -1,0 +1,15 @@
+@import "/style/rest.wxss";
+
+page{
+  min-height: 100vh;
+  background: #f0f0f0;
+}
+
+.container{
+  padding: 0 30rpx;
+}
+
+
+.u-shadow{
+  box-shadow: 0 3rpx 15rpx rgba(0,0,0,.1);
+}
