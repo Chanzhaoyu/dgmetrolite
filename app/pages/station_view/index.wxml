@@ -1,0 +1,64 @@
+<view class="main">
+  <map id="map" longitude="{{station[lineIndex].line_station[stationKey].longitude}}" latitude="{{station[lineIndex].line_station[stationKey].latitude}}" scale="17"></map>
+  <view class='map-controls u-shadow pd30'>
+    <view class='mc-item view-map' bindtap='viewLine' data-url="/static/images/line.png">
+      <image src='/static/icon/v_map.png'></image>查看线路</view>
+    <view class='mc-item full-screen' bindtap='toStation' data-name="{{station[lineIndex].line_station[stationKey].name}}" data-en="{{station[lineIndex].line_station[stationKey].en_name}}" data-lon="{{station[lineIndex].line_station[stationKey].longitude}}"
+      data-lat="{{station[lineIndex].line_station[stationKey].latitude}}">
+      <image src='/static/icon/f_screen.png'></image>全屏地图</view>
+  </view>
+  <view class='g-main'>
+    <view class='m-tab'>
+      <view class='tab-list {{ tabIndex == 0 ? "tab-active" : "" }}' bindtap="tabChange" data-index="0">首末班车</view>
+      <view class='tab-list {{ tabIndex == 1 ? "tab-active" : "" }}' bindtap="tabChange" data-index="1">出口信息</view>
+    </view>
+    <view class='m-tab-main pd30'>
+      <view wx:if="{{tabIndex == 0}}" class='tab-main-list l-infomation'>
+        <view class='m-group'>
+          <view class='title'>{{station[lineIndex].line_station[stationKey].name}}</view>
+          <view class='subtitle'>{{station[lineIndex].line_station[stationKey].en_name}}</view>
+          <view class='date-wrap'>
+            <!-- <image src='/static/icon/time.png'></image> -->
+            <block wx:for="{{station[lineIndex].line_station[stationKey].running_time}}" wx:key="{{index}}">
+              <view class="run-time">
+                <view class='u-dir'>开往
+                  <text class='s-strong'>{{item.dir}}</text>方向</view>
+                <view class='u-date'>
+                  <text class='u-tag s-start'>首</text>{{item.start}}
+                  <text class='u-tag s-end'>末</text>{{item.end}}
+                </view>
+              </view>
+            </block>
+          </view>
+          <view class='toiler'>厕所位置：{{station[lineIndex].line_station[stationKey].toilet}}</view>
+        </view>
+      </view>
+      <view wx:if="{{tabIndex == 1}}" class='tab-main-list l-exit'>
+        <view class='m-group'>
+          <scroll-view scroll-y>
+            <view class='exit-list' wx:for="{{station[lineIndex].line_station[stationKey].exit}}" wx:key="{{index}}">
+              <view class='exit-hd'>
+                <view class='num'>{{item.dir}}</view>
+                <view>出口</view>
+                <view>Exit</view>
+              </view>
+              <view class='exit-item' wx:for="{{item.intro}}" wx:for-item="dir" wx:key="{{index}}">
+                {{dir}}
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+<!-- 暂存 -->
+<!-- <view class='map-mark' bindtap='toStation' data-name="{{station[lineIndex].line_station[stationKey].name}}" data-en="{{station[lineIndex].line_station[stationKey].en_name}}" data-lon="{{station[lineIndex].line_station[stationKey].longitude}}" data-lat="{{station[lineIndex].line_station[stationKey].latitude}}">
+            <image src="/static/icon/mark.png"></image>
+          </view> -->

@@ -1,0 +1,56 @@
+/* 线路选择样式 */
+@import "/style/line_change.wxss";
+
+.m-slide {
+  width: 100%;
+  height: 180rpx;
+  overflow: hidden;
+  background: #3498db;
+}
+
+.m-slide image {
+  width: 100%;
+  height: 180rpx;
+}
+
+.g-header {
+  padding: 30rpx;
+  background: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+  transform: translateY(-20rpx);
+}
+
+.pick-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  padding: 33rpx 30rpx;
+}
+
+.pick-wrap .name {
+  color: #444;
+  font-size: 28rpx;
+}
+
+.pick-wrap .intro {
+  color: #000;
+  font-size: 30rpx;
+  flex: 1;
+  padding: 0 30rpx 0 60rpx;
+  overflow: hidden;
+}
+
+.line {
+  margin-bottom: 15rpx;
+}
+
+.g-header image {
+  width: 13rpx;
+  height: 20rpx;
+}
+
+
+

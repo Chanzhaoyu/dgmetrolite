@@ -1,15 +1,25 @@
 @import "/style/rest.wxss";
 
-page{
+page {
   min-height: 100vh;
   background: #f0f0f0;
 }
 
-.container{
+.container {
   padding: 0 30rpx;
 }
 
+.u-shadow {
+  box-shadow: 0 3rpx 15rpx rgba(0, 0, 0, 0.1);
+}
 
-.u-shadow{
-  box-shadow: 0 3rpx 15rpx rgba(0,0,0,.1);
+.btn {
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  background: #3498db;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  letter-spacing: 5rpx;
 }

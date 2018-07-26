@@ -1,0 +1,46 @@
+<view class='main'>
+  <swiper class="m-slide">
+    <block wx:for="{{bannerUrls}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='g-header u-shadow'>
+    <view class='section line'>
+      <view class='pick-wrap' bindtap="modalShow">
+        <view class='name'>起点</view>
+        <view class='intro' wx:if="{{!stationName}}">选择站点</view>
+        <view class='intro' wx:else>{{stationName}}</view>
+        <image src="/static/icon/arrow.png"></image>
+      </view>
+    </view>
+    <view class='section line'>
+      <view class='pick-wrap' bindtap="modalShow">
+        <view class='name'>终点</view>
+        <view class='intro' wx:if="{{!stationName}}">选择站点</view>
+        <view class='intro' wx:else>{{stationName}}</view>
+        <image src="/static/icon/arrow.png"></image>
+      </view>
+    </view>
+    <view class='btn'>查询</view>
+  </view>
+</view>
+
+<view class="line-selection" hidden="{{modalFlag}}">
+  <view class="left-nav">
+    <scroll-view scroll-y>
+      <view class="nav-item" style="{{ index == lineIndex ? 'border-left-color:'+item.line_color : ''  }}" wx:for="{{station}}" wx:key="{{index}}" data-index="{{index}}" data-lineColor="{{item.line_color}}" bindtap="lineBind">
+        <view class="u-circle" style="background: {{item.line_color}}"></view>
+        {{item.line_name}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class="right-con">
+    <scroll-view scroll-y>
+      <view class="list-item" wx:for="{{station[lineIndex].line_station}}" wx:key="{{index}}" data-key="{{index}}" data-name="{{item.name}}" bindtap="stationBind">
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+</view>

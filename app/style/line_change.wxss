@@ -1,0 +1,50 @@
+.line-selection {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  color: #333;
+  z-index: 9999;
+  font-size: 28rpx;
+}
+
+.line-selection scroll-view {
+  height: 100%;
+}
+
+.left-nav .nav-item, .right-con .list-item {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 35rpx;
+  border-bottom: 2rpx solid #dcdcdc;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.left-nav {
+  width: 278rpx;
+  border-right: 2rpx solid #dcdcdc;
+}
+
+.left-nav .nav-item {
+  display: flex;
+  align-items: center;
+  border-left: 8rpx solid #fff;
+}
+
+.left-nav .u-circle {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #eee;
+  margin-right: 13rpx;
+}
+
+.right-con {
+  flex: 1;
+}
