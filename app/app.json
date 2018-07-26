@@ -2,12 +2,13 @@
   "pages": [
     "pages/metro/index",
     "pages/station_view/index",
+    "pages/line/index",
     "pages/bus/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3498DB",
-    "navigationBarTitleText": "东莞地铁信息",
+    "navigationBarTitleText": "东莞地铁出行",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {

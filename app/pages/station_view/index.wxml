@@ -12,7 +12,7 @@
       <view class='tab-list {{ tabIndex == 0 ? "tab-active" : "" }}' bindtap="tabChange" data-index="0">首末班车</view>
       <view class='tab-list {{ tabIndex == 1 ? "tab-active" : "" }}' bindtap="tabChange" data-index="1">出口信息</view>
     </view>
-    <view class='m-tab-main pd30'>
+    <view class='m-tab-main pd30 u-shadow'>
       <view wx:if="{{tabIndex == 0}}" class='tab-main-list l-infomation'>
         <view class='m-group'>
           <view class='title'>{{station[lineIndex].line_station[stationKey].name}}</view>
@@ -31,34 +31,23 @@
             </block>
           </view>
           <view class='toiler'>厕所位置：{{station[lineIndex].line_station[stationKey].toilet}}</view>
+          <button class="btn" open-type='share'>分享给朋友</button>
         </view>
       </view>
       <view wx:if="{{tabIndex == 1}}" class='tab-main-list l-exit'>
         <view class='m-group'>
-          <scroll-view scroll-y>
-            <view class='exit-list' wx:for="{{station[lineIndex].line_station[stationKey].exit}}" wx:key="{{index}}">
-              <view class='exit-hd'>
-                <view class='num'>{{item.dir}}</view>
-                <view>出口</view>
-                <view>Exit</view>
-              </view>
-              <view class='exit-item' wx:for="{{item.intro}}" wx:for-item="dir" wx:key="{{index}}">
-                {{dir}}
-              </view>
+          <view class='exit-list' wx:for="{{station[lineIndex].line_station[stationKey].exit}}" wx:key="{{index}}">
+            <view class='exit-hd'>
+              <view class='num'>{{item.dir}}</view>
+              <view>出口</view>
+              <view>Exit</view>
             </view>
-          </scroll-view>
+            <view class='exit-item' wx:for="{{item.intro}}" wx:for-item="dir" wx:key="{{index}}">
+              {{dir}}
+            </view>
+          </view>
         </view>
       </view>
     </view>
   </view>
 </view>
-
-
-
-
-
-
-<!-- 暂存 -->
-<!-- <view class='map-mark' bindtap='toStation' data-name="{{station[lineIndex].line_station[stationKey].name}}" data-en="{{station[lineIndex].line_station[stationKey].en_name}}" data-lon="{{station[lineIndex].line_station[stationKey].longitude}}" data-lat="{{station[lineIndex].line_station[stationKey].latitude}}">
-            <image src="/static/icon/mark.png"></image>
-          </view> -->

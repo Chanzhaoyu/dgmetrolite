@@ -23,29 +23,9 @@ Page({
       key: e.detail.value
     })
   },
-  tabChange(e) {
-    this.setData({
-      tabIndex: e.currentTarget.dataset.index
-    })
-  },
-  toStation(e) {
-    let lat = parseFloat(e.currentTarget.dataset.lat);
-    let lon = parseFloat(e.currentTarget.dataset.lon);
-    let name = e.currentTarget.dataset.name;
-    let en_name = e.currentTarget.dataset.en;
-    wx.openLocation({
-      name: name,
-      address: en_name,
-      latitude: lat,
-      longitude: lon,
-      scale: 24
-    })
-  },
-  viewLine(e) {
-    let imgUrl = e.currentTarget.dataset.url;
-    wx.previewImage({
-      urls: [imgUrl]
-    })
+  // 调换站点
+  reversalStaion(){
+    console.log('a')
   },
   // 线路遮罩
   modalShow() {
@@ -65,6 +45,13 @@ Page({
       stationName: e.currentTarget.dataset.name,
       stationKey: e.currentTarget.dataset.key,
       modalFlag: true
+    })
+  },
+  // 快捷菜单跳转
+  toPage(e){
+    let url = e.currentTarget.dataset.url;
+    wx.navigateTo({
+      url: url
     })
   },
   onShareAppMessage(e) {

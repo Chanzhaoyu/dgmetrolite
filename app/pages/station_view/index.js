@@ -2,17 +2,19 @@ let stationData = require('../../utils/station_data.js');
 
 Page({
   data: {
-    bannerUrls: [
-      '/static/images/logo_01.png'
-    ],
     tabIndex: 0,
     /*站点遮罩数据*/
-    stationName: '东莞火车站',
+    stationName: '',
     stationKey: 0,
-    modalFlag: true,
     lineIndex: 0
   },
   onLoad(options) {
+    if(options){
+      this.setData({
+        stationName: options.name,
+        stationKey: options.key
+      })
+    }
     let localData = stationData.station;
     this.setData({
       station: localData
@@ -71,7 +73,7 @@ Page({
   onShareAppMessage(e) {
     return {
       title: '东莞地铁信息',
-      path: '/pages/metro/index'
+      path: '/pages/station_view/index'
     }
   }
 })

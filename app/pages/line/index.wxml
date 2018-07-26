@@ -1,0 +1,17 @@
+<view class="line-selection">
+  <view class="left-nav">
+    <scroll-view scroll-y>
+      <view class="nav-item" style="{{ index == lineIndex ? 'border-left-color:'+item.line_color : ''  }}" wx:for="{{station}}" wx:key="{{index}}" data-index="{{index}}" data-lineColor="{{item.line_color}}" bindtap="lineBind">
+        <view class="u-circle" style="background: {{item.line_color}}"></view>
+        {{item.line_name}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class="right-con">
+    <scroll-view scroll-y>
+      <view class="list-item" wx:for="{{station[lineIndex].line_station}}" wx:key="{{index}}" data-key="{{index}}" data-name="{{item.name}}" data-line="{{lineIndex}}" bindtap="toStationView">
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+</view>

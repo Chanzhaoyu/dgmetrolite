@@ -7,7 +7,7 @@
     </block>
   </swiper>
   <view class='g-header u-shadow'>
-    <view class='section line'>
+    <view class='section start-line'>
       <view class='pick-wrap' bindtap="modalShow">
         <view class='name'>起点</view>
         <view class='intro' wx:if="{{!stationName}}">选择站点</view>
@@ -15,7 +15,7 @@
         <image src="/static/icon/arrow.png"></image>
       </view>
     </view>
-    <view class='section line'>
+    <view class='section end-line'>
       <view class='pick-wrap' bindtap="modalShow">
         <view class='name'>终点</view>
         <view class='intro' wx:if="{{!stationName}}">选择站点</view>
@@ -23,24 +23,30 @@
         <image src="/static/icon/arrow.png"></image>
       </view>
     </view>
-    <view class='btn'>查询</view>
+    <view class='reversal' bindtap='reversalStaion'>
+      <image src='/static/icon/rotate.png'></image>
+    </view>
+    <view class='btn'>确认查询</view>
+  </view>
+  <view class='g-menu'>
+    <view class='menu-wrap u-shadow'>
+      <view class='menu-item' bindtap="toPage" data-url="">
+        <image class='menu-icon' src="/static/icon/m-fjzd.png"></image>
+        <view class='menu-name'>附近站点</view>
+      </view>
+      <view class='menu-item' bindtap="toPage" data-url="/pages/line/index">
+        <image class='menu-icon' src="/static/icon/m-zdcx.png"></image>
+        <view class='menu-name'>站点查询</view>
+      </view>
+      <view class='menu-item' bindtap="toPage" data-url="">
+        <image class='menu-icon' src="/static/icon/m-dtt.png"></image>
+        <view class='menu-name'>地铁图</view>
+      </view>
+      <view class='menu-item'>
+        <image class='menu-icon' src="/static/icon/m-fx.png"></image>
+        <view class='menu-name'>推荐好友</view>
+      </view>
+    </view>
   </view>
 </view>
 
-<view class="line-selection" hidden="{{modalFlag}}">
-  <view class="left-nav">
-    <scroll-view scroll-y>
-      <view class="nav-item" style="{{ index == lineIndex ? 'border-left-color:'+item.line_color : ''  }}" wx:for="{{station}}" wx:key="{{index}}" data-index="{{index}}" data-lineColor="{{item.line_color}}" bindtap="lineBind">
-        <view class="u-circle" style="background: {{item.line_color}}"></view>
-        {{item.line_name}}
-      </view>
-    </scroll-view>
-  </view>
-  <view class="right-con">
-    <scroll-view scroll-y>
-      <view class="list-item" wx:for="{{station[lineIndex].line_station}}" wx:key="{{index}}" data-key="{{index}}" data-name="{{item.name}}" bindtap="stationBind">
-        {{item.name}}
-      </view>
-    </scroll-view>
-  </view>
-</view>

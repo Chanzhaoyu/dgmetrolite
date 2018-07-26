@@ -1,6 +1,3 @@
-/* 线路选择样式 */
-@import "/style/line_change.wxss";
-
 .m-slide {
   width: 100%;
   height: 180rpx;
@@ -18,6 +15,45 @@
   background: #fff;
   border-radius: 20rpx 20rpx 0 0;
   transform: translateY(-20rpx);
+  position: relative;
+}
+
+.reversal {
+  position: absolute;
+  top: 98rpx;
+  right: 40rpx;
+}
+
+.reversal image {
+  width: 76rpx;
+  height: 76rpx;
+}
+
+.start-line {
+  position: relative;
+}
+
+.start-line:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - 100rpx);
+  height: 2rpx;
+  background: #c9c9c9;
+  z-index: 9;
+}
+
+.end-line {
+  margin-bottom: 30rpx;
+}
+
+.start-line .pick-wrap {
+  border-radius: 10rpx 10rpx 0 0;
+}
+
+.end-line .pick-wrap {
+  border-radius: 0 0 10rpx 10rpx;
 }
 
 .pick-wrap {
@@ -43,14 +79,29 @@
   overflow: hidden;
 }
 
-.line {
-  margin-bottom: 15rpx;
-}
-
-.g-header image {
+.pick-wrap image {
   width: 13rpx;
   height: 20rpx;
+  display: none;
 }
 
+/* 快捷菜单 */
 
+.menu-wrap {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.menu-item {
+  width: 25%;
+  padding: 30rpx 0 20rpx;
+  text-align: center;
+}
+
+.menu-item .menu-icon {
+  width: 72rpx;
+  height: 72rpx;
+  margin-bottom: 20rpx;
+}

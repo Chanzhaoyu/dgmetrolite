@@ -1,4 +1,6 @@
 @import "/style/rest.wxss";
+/* 线路选择样式 */
+@import "/style/line_change.wxss";
 
 page {
   min-height: 100vh;
