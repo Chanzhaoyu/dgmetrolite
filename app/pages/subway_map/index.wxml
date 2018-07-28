@@ -1,0 +1,4 @@
+<image class='subway-map' src="{{mapUrl}}" mode='widthFix'></image>
+<view class='pd30'>
+  <view class='btn' bindtap='viewZoom'>查看高清图</view>
+</view>

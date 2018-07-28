@@ -79,6 +79,14 @@
   overflow: hidden;
 }
 
+.pick-wrap .mark{
+  color: #3498db;
+}
+
+.pick-wrap .disable{
+  color: #888;
+}
+
 .pick-wrap image {
   width: 13rpx;
   height: 20rpx;
@@ -98,10 +106,22 @@
   width: 25%;
   padding: 30rpx 0 20rpx;
   text-align: center;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .menu-item .menu-icon {
   width: 72rpx;
   height: 72rpx;
   margin-bottom: 20rpx;
+}
+
+.menu-item .share-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  z-index: 2;
 }

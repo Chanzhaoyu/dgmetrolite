@@ -8,29 +8,30 @@
   </swiper>
   <view class='g-header u-shadow'>
     <view class='section start-line'>
-      <view class='pick-wrap' bindtap="modalShow">
+      <view class='pick-wrap' bindtap='choseAddress' data-type="origin">
         <view class='name'>起点</view>
-        <view class='intro' wx:if="{{!stationName}}">选择站点</view>
-        <view class='intro' wx:else>{{stationName}}</view>
+        <view class='intro' wx:if="{{!location.origin.name}}"><text class='mark'>我的位置</text></view>
+         <view class='intro' wx:else>{{location.origin.name}}</view>
         <image src="/static/icon/arrow.png"></image>
       </view>
     </view>
     <view class='section end-line'>
-      <view class='pick-wrap' bindtap="modalShow">
+      <view class='pick-wrap' bindtap="choseAddress" data-type="end">
         <view class='name'>终点</view>
-        <view class='intro' wx:if="{{!stationName}}">选择站点</view>
-        <view class='intro' wx:else>{{stationName}}</view>
+        <view class='intro' wx:if="{{!location.end}}">请选择终点</view>
+        <view class='intro' wx:elif="{{location.end.name}}">{{location.end.name}}</view>
+        <view class='intro' wx:else><text class='mark'>我的位置</text></view>
         <image src="/static/icon/arrow.png"></image>
       </view>
     </view>
     <view class='reversal' bindtap='reversalStaion'>
       <image src='/static/icon/rotate.png'></image>
     </view>
-    <view class='btn'>确认查询</view>
+    <view class='btn' bindtap='bindQuery'>确认查询</view>
   </view>
   <view class='g-menu'>
     <view class='menu-wrap u-shadow'>
-      <view class='menu-item' bindtap="toPage" data-url="">
+      <view class='menu-item' bindtap="toPage" data-url="/pages/nearby_site/index">
         <image class='menu-icon' src="/static/icon/m-fjzd.png"></image>
         <view class='menu-name'>附近站点</view>
       </view>
@@ -38,15 +39,15 @@
         <image class='menu-icon' src="/static/icon/m-zdcx.png"></image>
         <view class='menu-name'>站点查询</view>
       </view>
-      <view class='menu-item' bindtap="toPage" data-url="">
+      <view class='menu-item' bindtap="toPage" data-url="/pages/subway_map/index">
         <image class='menu-icon' src="/static/icon/m-dtt.png"></image>
         <view class='menu-name'>地铁图</view>
       </view>
       <view class='menu-item'>
         <image class='menu-icon' src="/static/icon/m-fx.png"></image>
         <view class='menu-name'>推荐好友</view>
+        <button plain class='share-btn' open-type='share'></button>
       </view>
     </view>
   </view>
 </view>
-

@@ -2,24 +2,6 @@ var station = [{
   "line_name": '2号线',
   "line_color": "#c72e29",
   "line_station": [{
-    "name": "虎门火车站",
-    "en_name": "HuMen Railway Station",
-    "running_time": [{
-      "start": "06:30",
-      "end": "22:30",
-      "dir": "东莞火车站"
-    }],
-    "latitude": "22.859262",
-    "longitude": "113.671511",
-    "toilet": "月台两侧",
-    "exit": [{
-      "dir": "A",
-      "intro": ["莞太路", "站北路", "牌坊路", "机场一路"]
-    }, {
-      "dir": "B",
-      "intro": ["虎门火车站"]
-    }]
-  }, {
     "name": "东莞火车站",
     "en_name": "Dongguan Railway Station",
     "running_time": [{
@@ -396,6 +378,24 @@ var station = [{
     }, {
       "dir": "D",
       "intro": ["莞太路", "会展东路", "南五文化公园", "南五村"]
+    }]
+  }, {
+    "name": "虎门火车站",
+    "en_name": "HuMen Railway Station",
+    "running_time": [{
+      "start": "06:30",
+      "end": "22:30",
+      "dir": "东莞火车站"
+    }],
+    "latitude": "22.859262",
+    "longitude": "113.671511",
+    "toilet": "月台两侧",
+    "exit": [{
+      "dir": "A",
+      "intro": ["莞太路", "站北路", "牌坊路", "机场一路"]
+    }, {
+      "dir": "B",
+      "intro": ["虎门火车站"]
     }]
   }]
 }]

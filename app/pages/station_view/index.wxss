@@ -77,11 +77,22 @@
   font-size: 38rpx;
   color: #222;
   line-height: 1.7;
+  display: flex;
+  align-items: center;
+}
+
+.l-infomation .line-title{
+  padding: 0 20rpx;
+  border-radius: 10rpx;
+  color: #3498db;
+  border: 2rpx solid #3498db;
+  margin-left: 20rpx;
+  font-size: 26rpx;
 }
 
 .l-infomation .subtitle {
   color: #666;
-  margin-bottom: 25rpx;
+  margin: 10rpx 0 25rpx;
   font-size: 28rpx;
 }
 

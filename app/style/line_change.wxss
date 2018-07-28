@@ -26,6 +26,10 @@
   box-sizing: border-box;
 }
 
+.left-nav, .right-con {
+  height: 100%;
+}
+
 .left-nav {
   width: 278rpx;
   border-right: 2rpx solid #dcdcdc;

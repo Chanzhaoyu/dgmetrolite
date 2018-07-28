@@ -1,7 +1,7 @@
 <view class="main">
   <map id="map" longitude="{{station[lineIndex].line_station[stationKey].longitude}}" latitude="{{station[lineIndex].line_station[stationKey].latitude}}" scale="17"></map>
   <view class='map-controls u-shadow pd30'>
-    <view class='mc-item view-map' bindtap='viewLine' data-url="/static/images/line.png">
+    <view class='mc-item view-map' bindtap='viewLine' data-url="http://9me9em.m9.magic2008.cn/ufile/59795/img/map.png">
       <image src='/static/icon/v_map.png'></image>查看线路</view>
     <view class='mc-item full-screen' bindtap='toStation' data-name="{{station[lineIndex].line_station[stationKey].name}}" data-en="{{station[lineIndex].line_station[stationKey].en_name}}" data-lon="{{station[lineIndex].line_station[stationKey].longitude}}"
       data-lat="{{station[lineIndex].line_station[stationKey].latitude}}">
@@ -15,7 +15,7 @@
     <view class='m-tab-main pd30 u-shadow'>
       <view wx:if="{{tabIndex == 0}}" class='tab-main-list l-infomation'>
         <view class='m-group'>
-          <view class='title'>{{station[lineIndex].line_station[stationKey].name}}</view>
+          <view class='title'>{{station[lineIndex].line_station[stationKey].name}}<view class='line-title'>{{station[lineIndex].line_name}}</view></view>
           <view class='subtitle'>{{station[lineIndex].line_station[stationKey].en_name}}</view>
           <view class='date-wrap'>
             <!-- <image src='/static/icon/time.png'></image> -->
