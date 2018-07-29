@@ -1,0 +1,86 @@
+page{
+  background: #fff;
+}
+
+#map{
+  width: 100%;
+  height: 520rpx;
+}
+
+.arrow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  background: #f7f7f7;
+  border-top: 2rpx solid #eaeaea;
+}
+
+.arrow image{
+  width: 39rpx;
+  height: 22rpx;
+}
+
+.item{
+  padding: 0 35rpx;
+}
+
+
+.item-wrap{
+  padding: 40rpx 96rpx 40rpx 0;
+  border-bottom: 2rpx solid #eaeaea;
+  position: relative;
+}
+
+.title{
+  font-size: 42rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center
+}
+
+.subtitle{
+  font-size: 32rpx;
+}
+
+.u-distance{
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+
+.infomation{
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+
+.line-name{
+  color: #fff;
+  background: #e6747d;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+  margin-left: 30rpx;
+  font-size: 24rpx;
+}
+
+
+.ud-icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 10rpx;
+  background: #637285;
+  color: #637285;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.ud-icon image{
+  width: 24rpx;
+  height: 35rpx;
+}

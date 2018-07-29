@@ -109,6 +109,14 @@ Page({
   reversalStaion() {
     let sStart = this.data.location.origin;
     let sEnd = this.data.location.end;
+    if(!sStart || !sEnd){
+      wx.showModal({
+        title: '提示',
+        content: '请选择目的地',
+        showCancel: false
+      })
+      return;
+    }
     this.setData({
       'location.origin': sEnd,
       'location.end': sStart

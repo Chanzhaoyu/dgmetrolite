@@ -1,0 +1,113 @@
+<view class="main">
+    <view class="map-box" hidden="{{!arrow}}">
+        <map id="map" longitude="{{location.lng}}" latitude="{{location.lat}}" scale="16" markers="{{markers}}"></map>
+    </view>
+    <view class="arrow" bindtap="bindArrow">
+        <image wx:if="{{arrow}}" src="/img/arrow_up.png"></image>
+        <image wx:else src="/img/arrow_down.png"></image>
+    </view>
+    <view class="list-box">
+        <view class="item">
+            <view class="item-wrap">
+                <view class="title">天宝
+                    <text class="subtitle">（地铁站）</text>
+                </view>
+                <view class="infomation">
+                    <text class="distance">602米</text>
+                    <text class="line-name">2号线</text>
+                </view>
+                <view class="u-distance">
+                    <view class="ud-icon">
+                        <image src="/img/line.png"></image>
+                    </view>
+                    <view class="ud-name">路线</view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="item-wrap">
+                <view class="title">天宝
+                    <text class="subtitle">（地铁站）</text>
+                </view>
+                <view class="infomation">
+                    <text class="distance">602米</text>
+                    <text class="line-name">2号线</text>
+                </view>
+                <view class="u-distance">
+                    <view class="ud-icon">
+                        <image src="/img/line.png"></image>
+                    </view>
+                    <view class="ud-name">路线</view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="item-wrap">
+                <view class="title">天宝
+                    <text class="subtitle">（地铁站）</text>
+                </view>
+                <view class="infomation">
+                    <text class="distance">602米</text>
+                    <text class="line-name">2号线</text>
+                </view>
+                <view class="u-distance">
+                    <view class="ud-icon">
+                        <image src="/img/line.png"></image>
+                    </view>
+                    <view class="ud-name">路线</view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="item-wrap">
+                <view class="title">天宝
+                    <text class="subtitle">（地铁站）</text>
+                </view>
+                <view class="infomation">
+                    <text class="distance">602米</text>
+                    <text class="line-name">2号线</text>
+                </view>
+                <view class="u-distance">
+                    <view class="ud-icon">
+                        <image src="/img/line.png"></image>
+                    </view>
+                    <view class="ud-name">路线</view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="item-wrap">
+                <view class="title">天宝
+                    <text class="subtitle">（地铁站）</text>
+                </view>
+                <view class="infomation">
+                    <text class="distance">602米</text>
+                    <text class="line-name">2号线</text>
+                </view>
+                <view class="u-distance">
+                    <view class="ud-icon">
+                        <image src="/img/line.png"></image>
+                    </view>
+                    <view class="ud-name">路线</view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="item-wrap">
+                <view class="title">天宝
+                    <text class="subtitle">（地铁站）</text>
+                </view>
+                <view class="infomation">
+                    <text class="distance">602米</text>
+                    <text class="line-name">2号线</text>
+                </view>
+                <view class="u-distance">
+                    <view class="ud-icon">
+                        <image src="/img/line.png"></image>
+                    </view>
+                    <view class="ud-name">路线</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
