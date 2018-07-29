@@ -5,7 +5,7 @@
       <image src='/static/icon/v_map.png'></image>查看线路</view>
     <view class='mc-item full-screen' bindtap='toStation' data-name="{{station[lineIndex].line_station[stationKey].name}}" data-en="{{station[lineIndex].line_station[stationKey].en_name}}" data-lon="{{station[lineIndex].line_station[stationKey].longitude}}"
       data-lat="{{station[lineIndex].line_station[stationKey].latitude}}">
-      <image src='/static/icon/f_screen.png'></image>全屏地图</view>
+      <image src='/static/icon/f_screen.png'></image>全屏导航</view>
   </view>
   <view class='g-main'>
     <view class='m-tab'>

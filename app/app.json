@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/Surrounding_subway/index",
     "pages/metro/index",
+    "pages/Surrounding_subway/index",
     "pages/navigation_bus/index",
     "pages/station_view/index",
     "pages/subway_map/index",

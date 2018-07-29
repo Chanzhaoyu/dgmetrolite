@@ -39,7 +39,7 @@
         <image class='menu-icon' src="/static/icon/m-zdcx.png"></image>
         <view class='menu-name'>站点查询</view>
       </view>
-      <view class='menu-item' bindtap="earbyStation">
+      <view class='menu-item' bindtap="toPage" data-url="/pages/Surrounding_subway/index">
         <image class='menu-icon' src="/static/icon/m-fjzd.png"></image>
         <view class='menu-name'>附近站点</view>
       </view>

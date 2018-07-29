@@ -1,113 +1,36 @@
 <view class="main">
-    <view class="map-box" hidden="{{!arrow}}">
-        <map id="map" longitude="{{location.lng}}" latitude="{{location.lat}}" scale="16" markers="{{markers}}"></map>
-    </view>
+  <view class="map-box" hidden="{{!arrow}}">
+    <map id="map" longitude="{{location.lng}}" latitude="{{location.lat}}" markers="{{markers}}" polyline="{{polyline}}" scale="14"></map>
+  </view>
+  <block wx:if="{{!station}}">
+    <view class='no-data'>很遗憾，您附近 5 公里内没有地铁站！</view>
+  </block>
+  <block wx:else>
     <view class="arrow" bindtap="bindArrow">
-        <image wx:if="{{arrow}}" src="/img/arrow_up.png"></image>
-        <image wx:else src="/img/arrow_down.png"></image>
+      <image wx:if="{{arrow}}" src="/img/arrow_up.png"></image>
+      <image wx:else src="/img/arrow_down.png"></image>
     </view>
     <view class="list-box">
-        <view class="item">
-            <view class="item-wrap">
-                <view class="title">天宝
-                    <text class="subtitle">（地铁站）</text>
-                </view>
-                <view class="infomation">
-                    <text class="distance">602米</text>
-                    <text class="line-name">2号线</text>
-                </view>
-                <view class="u-distance">
-                    <view class="ud-icon">
-                        <image src="/img/line.png"></image>
-                    </view>
-                    <view class="ud-name">路线</view>
-                </view>
+      <view class="item" wx:for="{{station}}" wx:key="{{item.id}}">
+        <view class="item-wrap">
+          <view>
+            <view class="title">{{item.name}}
+              <text class="tips" wx:if="{{index === 0}}">距离最近</text>
             </view>
-        </view>
-        <view class="item">
-            <view class="item-wrap">
-                <view class="title">天宝
-                    <text class="subtitle">（地铁站）</text>
-                </view>
-                <view class="infomation">
-                    <text class="distance">602米</text>
-                    <text class="line-name">2号线</text>
-                </view>
-                <view class="u-distance">
-                    <view class="ud-icon">
-                        <image src="/img/line.png"></image>
-                    </view>
-                    <view class="ud-name">路线</view>
-                </view>
+            <view class="infomation">
+              <text class="distance" wx:if="{{item.distance<1000}}">{{item.distance}}米</text>
+              <text class="distance" wx:else>{{item.distance/1000}}公里</text>
+              <text class="line-name">{{item.shopinfo}}号线</text>
             </view>
-        </view>
-        <view class="item">
-            <view class="item-wrap">
-                <view class="title">天宝
-                    <text class="subtitle">（地铁站）</text>
-                </view>
-                <view class="infomation">
-                    <text class="distance">602米</text>
-                    <text class="line-name">2号线</text>
-                </view>
-                <view class="u-distance">
-                    <view class="ud-icon">
-                        <image src="/img/line.png"></image>
-                    </view>
-                    <view class="ud-name">路线</view>
-                </view>
+          </view>
+          <view class="u-distance" data-location="{{item.location}}" data-name="{{item.name}}" bindtap="goStation">
+            <view class="ud-icon">
+              <image src="/img/line.png"></image>
             </view>
+            <view class="ud-name">路线</view>
+          </view>
         </view>
-        <view class="item">
-            <view class="item-wrap">
-                <view class="title">天宝
-                    <text class="subtitle">（地铁站）</text>
-                </view>
-                <view class="infomation">
-                    <text class="distance">602米</text>
-                    <text class="line-name">2号线</text>
-                </view>
-                <view class="u-distance">
-                    <view class="ud-icon">
-                        <image src="/img/line.png"></image>
-                    </view>
-                    <view class="ud-name">路线</view>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <view class="item-wrap">
-                <view class="title">天宝
-                    <text class="subtitle">（地铁站）</text>
-                </view>
-                <view class="infomation">
-                    <text class="distance">602米</text>
-                    <text class="line-name">2号线</text>
-                </view>
-                <view class="u-distance">
-                    <view class="ud-icon">
-                        <image src="/img/line.png"></image>
-                    </view>
-                    <view class="ud-name">路线</view>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <view class="item-wrap">
-                <view class="title">天宝
-                    <text class="subtitle">（地铁站）</text>
-                </view>
-                <view class="infomation">
-                    <text class="distance">602米</text>
-                    <text class="line-name">2号线</text>
-                </view>
-                <view class="u-distance">
-                    <view class="ud-icon">
-                        <image src="/img/line.png"></image>
-                    </view>
-                    <view class="ud-name">路线</view>
-                </view>
-            </view>
-        </view>
+      </view>
     </view>
+  </block>
 </view>

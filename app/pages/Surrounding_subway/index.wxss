@@ -35,8 +35,6 @@ page{
 .title{
   font-size: 42rpx;
   height: 60rpx;
-  display: flex;
-  align-items: center
 }
 
 .subtitle{
@@ -83,4 +81,16 @@ page{
 .ud-icon image{
   width: 24rpx;
   height: 35rpx;
+}
+
+.no-data{
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 100rpx;
+}
+
+.tips{
+  color: #59cfac;
+  font-size: 36rpx;
+  margin-left: 20rpx;
 }

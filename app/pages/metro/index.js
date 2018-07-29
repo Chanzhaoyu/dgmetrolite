@@ -21,6 +21,14 @@ Page({
           'location.origin.address': ''
         })
 
+        wx.setStorage({
+          key: 'location',
+          data: {
+            lat: lat,
+            lng: lng
+          },
+        })
+
       },
       fail: (info) => {
         console.log(info);
