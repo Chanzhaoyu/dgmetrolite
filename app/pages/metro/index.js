@@ -81,14 +81,28 @@ Page({
       return;
     }
 
-    let page = '/pages/route_planning/index?origin=';
+    // let page = '/pages/route_planning/index?origin=';
+    // let url = sOrigin.lat + ',' + sOrigin.lng + ',' + sOrigin.name + ',' + sOrigin.address + '&end=' + sEnd.lat + ',' + sEnd.lng + ',' + sEnd.name + ',' + sEnd.address
+    // console.log(page + url);
+    // wx.navigateTo({
+    //   url: page + url,
+    // })
 
-    let url = sOrigin.lat + ',' + sOrigin.lng + ',' + sOrigin.name + ',' + sOrigin.address + '&end=' + sEnd.lat + ',' + sEnd.lng + ',' + sEnd.name + ',' + sEnd.address
+    let chooseData = {
+      sLng: sOrigin.lng,
+      sLat: sOrigin.lat,
+      eLng: sEnd.lng,      
+      eLat: sEnd.lat
+    }
 
-    console.log(page + url);
-
-    wx.navigateTo({
-      url: page + url,
+    wx.setStorage({
+      key: 'chooseData',
+      data: chooseData,
+      success: function(){
+        wx.navigateTo({
+          url: '/pages/navigation_bus/index',
+        })
+      }
     })
   },
   // 调换站点
@@ -105,6 +119,47 @@ Page({
     let url = e.currentTarget.dataset.url;
     wx.navigateTo({
       url: url
+    })
+  },
+  // 附近站点
+  earbyStation(e) {
+    let that = this;
+    let nLatitude, nLongitude;
+    wx.getLocation({
+      type: 'gcj02',
+      success: function(res) {
+        nLatitude = res.latitude;
+        nLongitude = res.longitude;
+        that.setData({
+          'markers[0].latitude': nLatitude,
+          'markers[0].longitude': nLongitude
+        })
+        wx.request({
+          url: 'https://restapi.amap.com/v3/place/around',
+          data: {
+            location: nLongitude + ',' + nLatitude,
+            keywords: '地铁站',
+            sortrule: 'distance',
+            offset: 5,
+            key: "27d1827d9e2e058bb05132878f18cffb"
+          },
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function(res) {
+            let mapData = res.data.pois;
+            let location = (mapData[0].location).split(',');
+            console.log(res)
+            wx.openLocation({
+              latitude: parseFloat(location[1]),
+              longitude: parseFloat(location[0]),
+              scale: 18,
+              name: mapData[0].name,
+              addrsss: mapData[0].address
+            })
+          }
+        })
+      }
     })
   },
   showModal(c, t) {

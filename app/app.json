@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/metro/index",
-    "pages/route_planning/index",
+    "pages/navigation_bus/index",
     "pages/station_view/index",
     "pages/subway_map/index",
     "pages/nearby_site/index",
@@ -10,6 +10,20 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     "navigationBarBackgroundColor": "#3498DB",
     "navigationBarTitleText": "东莞地铁出行",
     "navigationBarTextStyle": "white"

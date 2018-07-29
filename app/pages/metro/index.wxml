@@ -10,8 +10,10 @@
     <view class='section start-line'>
       <view class='pick-wrap' bindtap='choseAddress' data-type="origin">
         <view class='name'>起点</view>
-        <view class='intro' wx:if="{{!location.origin.name}}"><text class='mark'>我的位置</text></view>
-         <view class='intro' wx:else>{{location.origin.name}}</view>
+        <view class='intro' wx:if="{{!location.origin.name}}">
+          <text class='mark'>我的位置</text>
+        </view>
+        <view class='intro' wx:else>{{location.origin.name}}</view>
         <image src="/static/icon/arrow.png"></image>
       </view>
     </view>
@@ -20,7 +22,9 @@
         <view class='name'>终点</view>
         <view class='intro' wx:if="{{!location.end}}">请选择终点</view>
         <view class='intro' wx:elif="{{location.end.name}}">{{location.end.name}}</view>
-        <view class='intro' wx:else><text class='mark'>我的位置</text></view>
+        <view class='intro' wx:else>
+          <text class='mark'>我的位置</text>
+        </view>
         <image src="/static/icon/arrow.png"></image>
       </view>
     </view>
@@ -31,13 +35,13 @@
   </view>
   <view class='g-menu'>
     <view class='menu-wrap u-shadow'>
-      <view class='menu-item' bindtap="toPage" data-url="/pages/nearby_site/index">
-        <image class='menu-icon' src="/static/icon/m-fjzd.png"></image>
-        <view class='menu-name'>附近站点</view>
-      </view>
       <view class='menu-item' bindtap="toPage" data-url="/pages/line/index">
         <image class='menu-icon' src="/static/icon/m-zdcx.png"></image>
         <view class='menu-name'>站点查询</view>
+      </view>
+      <view class='menu-item' bindtap="earbyStation">
+        <image class='menu-icon' src="/static/icon/m-fjzd.png"></image>
+        <view class='menu-name'>附近站点</view>
       </view>
       <view class='menu-item' bindtap="toPage" data-url="/pages/subway_map/index">
         <image class='menu-icon' src="/static/icon/m-dtt.png"></image>

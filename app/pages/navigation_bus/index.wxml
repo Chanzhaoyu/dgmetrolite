@@ -1,0 +1,9 @@
+<view class="main">
+  <map id="navi_map" longitude="{{sLng}}" latitude="{{sLat}}" scale="12" markers="{{markers}}" polyline="{{polyline}}"></map>
+  <view class="caption">{{}}</view>
+  <view class="text_box" wx:for="{{transits}}" wx:for-item="i" wx:key="{{index}}">
+    <text class="text_item" wx:for="{{i.transport}}" wx:for-item="j" wx:key="{{index}}">
+    {{j}}
+  </text>
+  </view>
+</view>
