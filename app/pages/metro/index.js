@@ -91,14 +91,14 @@ Page({
     let chooseData = {
       sLng: sOrigin.lng,
       sLat: sOrigin.lat,
-      eLng: sEnd.lng,      
+      eLng: sEnd.lng,
       eLat: sEnd.lat
     }
 
     wx.setStorage({
       key: 'chooseData',
       data: chooseData,
-      success: function(){
+      success: function() {
         wx.navigateTo({
           url: '/pages/navigation_bus/index',
         })
@@ -147,16 +147,23 @@ Page({
             'content-type': 'application/json'
           },
           success: function(res) {
-            let mapData = res.data.pois;
-            let location = (mapData[0].location).split(',');
-            console.log(res)
-            wx.openLocation({
-              latitude: parseFloat(location[1]),
-              longitude: parseFloat(location[0]),
-              scale: 18,
-              name: mapData[0].name,
-              addrsss: mapData[0].address
-            })
+            if (res && res.data.pois) {
+              let mapData = res.data.pois;
+              let location = (mapData[0].location).split(',');
+              console.log(res)
+              wx.openLocation({
+                latitude: parseFloat(location[1]),
+                longitude: parseFloat(location[0]),
+                scale: 18,
+                name: mapData[0].name,
+                addrsss: mapData[0].address
+              })
+            } else {
+              wx.showModal({
+                title: '提示',
+                content: '附近没有地铁站',
+              })
+            }
           }
         })
       }

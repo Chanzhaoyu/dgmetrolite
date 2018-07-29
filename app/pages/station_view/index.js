@@ -9,7 +9,7 @@ Page({
     lineIndex: 0
   },
   onLoad(options) {
-    if(options){
+    if (options) {
       this.setData({
         stationName: options.name,
         stationKey: options.key
@@ -19,6 +19,7 @@ Page({
     this.setData({
       station: localData
     })
+   
   },
   bindPickerChange(e) {
     this.setData({
