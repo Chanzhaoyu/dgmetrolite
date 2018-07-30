@@ -15,6 +15,7 @@ Page({
       let localData = stationData.station;
 
       this.setData({
+        options: options,
         stationName: localData[options.line].line_name,
         stationData: localData[options.line].line_station[options.key]
       })
@@ -134,9 +135,10 @@ Page({
     })
   },
   onShareAppMessage(e) {
+    let value = e.currentTarget.dataset.option;
     return {
       title: '东莞地铁信息',
-      path: '/pages/station_view/index'
+      path: '/pages/station_view/index?name=' + value.name + '&key=' + value.key + '&line=' + value.line
     }
   }
 })

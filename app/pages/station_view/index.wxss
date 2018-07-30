@@ -245,3 +245,7 @@
 .infomation{
   margin: 20rpx 0;
 }
+
+.item-wrap .title{
+  color: #3498db;
+}

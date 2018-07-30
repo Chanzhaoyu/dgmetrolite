@@ -35,7 +35,7 @@
             </block>
           </view>
           <view class='toiler'>厕所位置：{{stationData.toilet}}</view>
-          <button class="btn" open-type='share'>分享给朋友</button>
+          <button class="btn" open-type='share' data-option="{{options}}">分享给朋友</button>
         </view>
       </view>
 
