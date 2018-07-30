@@ -3,6 +3,7 @@ Page({
     markers: [],
     location: [],
     station: [],
+    scale: 14,
     arrow: true
   },
   onLoad: function(options) {
@@ -10,6 +11,7 @@ Page({
     var that = this;
 
     var location = wx.getStorageSync('location');
+
 
     var position = {};
 
@@ -26,6 +28,7 @@ Page({
         key: '27d1827d9e2e058bb05132878f18cffb',
         location: position.lng + ',' + position.lat,
         keywords: '地铁',
+        types: 150500,
         city: '东莞'
       },
       success: function(res) {
@@ -34,7 +37,7 @@ Page({
           var poisData = [];
           var stationData = [];
           for (var i = 0; i < pois.length; i++) {
-            if (pois[i].address != '(在建)1号线' && pois[i].distance <= 5000) {
+            if (pois[i].address != '(在建)1号线') {
               stationData.push(pois[i]);
               var location = pois[i].location.split(',');
               poisData.push({

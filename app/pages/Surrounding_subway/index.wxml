@@ -1,11 +1,8 @@
 <view class="main">
   <view class="map-box" hidden="{{!arrow}}">
-    <map id="map" longitude="{{location.lng}}" latitude="{{location.lat}}" markers="{{markers}}" polyline="{{polyline}}" scale="14"></map>
+    <map id="map" longitude="{{location.lng}}" latitude="{{location.lat}}" markers="{{markers}}" scale="{{scale}}"></map>
   </view>
-  <block wx:if="{{!station}}">
-    <view class='no-data'>很遗憾，您附近 5 公里内没有地铁站！</view>
-  </block>
-  <block wx:else>
+  <block wx:if="{{station}}">
     <view class="arrow" bindtap="bindArrow">
       <image wx:if="{{arrow}}" src="/img/arrow_up.png"></image>
       <image wx:else src="/img/arrow_down.png"></image>
@@ -32,5 +29,8 @@
         </view>
       </view>
     </view>
+  </block>
+  <block wx:else>
+    <view class='no-data'>很遗憾，您附近没有地铁站！</view>
   </block>
 </view>

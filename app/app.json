@@ -1,18 +1,40 @@
 {
   "pages": [
-    "pages/metro/index",
-    "pages/Surrounding_subway/index",
-    "pages/navigation_bus/index",
-    "pages/station_view/index",
-    "pages/subway_map/index",
-    "pages/nearby_site/index",
     "pages/line/index",
-    "pages/bus/index"
+    "pages/Surrounding_subway/index",
+    "pages/station_view/index",
+    "pages/navigation_bus/index",
+    "pages/subway_map/index",
+    "pages/metro/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3498DB",
     "navigationBarTitleText": "东莞地铁出行",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#434343",
+    "selectedColor": "#3498db",
+    "list": [
+      {
+        "pagePath": "pages/line/index",
+        "text": "站点信息",
+        "iconPath": "/static/tabBar/n_metro.png",
+        "selectedIconPath": "/static/tabBar/s_metro.png"
+      },
+      {
+        "pagePath": "pages/Surrounding_subway/index",
+        "text": "附近地铁",
+        "iconPath": "/static/tabBar/n_station.png",
+        "selectedIconPath": "/static/tabBar/s_station.png"
+      },
+      {
+        "pagePath": "pages/subway_map/index",
+        "text": "线路图",
+        "iconPath": "/static/tabBar/n_line.png",
+        "selectedIconPath": "/static/tabBar/s_line.png"
+      }
+    ]
   }
 }

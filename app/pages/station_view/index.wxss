@@ -238,3 +238,10 @@
 .exit-item {
   line-height: 60rpx;
 }
+
+/* 公交 */
+@import '/style/list_group.wxss';
+
+.infomation{
+  margin: 20rpx 0;
+}

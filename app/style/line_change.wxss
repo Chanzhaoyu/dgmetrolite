@@ -26,6 +26,10 @@
   box-sizing: border-box;
 }
 
+.right-con .list-item:last-child {
+  border-bottom: 0;
+}
+
 .left-nav, .right-con {
   height: 100%;
 }

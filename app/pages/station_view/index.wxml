@@ -1,25 +1,29 @@
 <view class="main">
-  <map id="map" longitude="{{station[lineIndex].line_station[stationKey].longitude}}" latitude="{{station[lineIndex].line_station[stationKey].latitude}}" scale="17"></map>
-  <view class='map-controls u-shadow pd30'>
-    <view class='mc-item view-map' bindtap='viewLine' data-url="http://9me9em.m9.magic2008.cn/ufile/59795/img/map.png">
-      <image src='/static/icon/v_map.png'></image>查看线路</view>
-    <view class='mc-item full-screen' bindtap='toStation' data-name="{{station[lineIndex].line_station[stationKey].name}}" data-en="{{station[lineIndex].line_station[stationKey].en_name}}" data-lon="{{station[lineIndex].line_station[stationKey].longitude}}"
-      data-lat="{{station[lineIndex].line_station[stationKey].latitude}}">
-      <image src='/static/icon/f_screen.png'></image>全屏导航</view>
-  </view>
+  <block wx:if="{{mapHidden}}">
+    <map id="map" longitude="{{stationData.longitude}}" latitude="{{stationData.latitude}}" scale="17"></map>
+    <view class='map-controls u-shadow pd30'>
+      <view class='mc-item view-map' bindtap='viewLine' data-url="http://9me9em.m9.magic2008.cn/ufile/59795/img/map.png">
+        <image src='/static/icon/v_map.png'></image>查看线路</view>
+      <view class='mc-item full-screen' bindtap='toStation' data-name="{{stationData.name}}" data-en="{{stationData.en_name}}" data-lon="{{stationData.longitude}}" data-lat="{{stationData.latitude}}">
+        <image src='/static/icon/f_screen.png'></image>全屏导航</view>
+    </view>
+  </block>
   <view class='g-main'>
     <view class='m-tab'>
       <view class='tab-list {{ tabIndex == 0 ? "tab-active" : "" }}' bindtap="tabChange" data-index="0">首末班车</view>
       <view class='tab-list {{ tabIndex == 1 ? "tab-active" : "" }}' bindtap="tabChange" data-index="1">出口信息</view>
+      <view class='tab-list {{ tabIndex == 2 ? "tab-active" : "" }}' bindtap="tabChange" data-index="2">周边公交</view>
     </view>
-    <view class='m-tab-main pd30 u-shadow'>
-      <view wx:if="{{tabIndex == 0}}" class='tab-main-list l-infomation'>
+    <view class='m-tab-main u-shadow'>
+      <view wx:if="{{tabIndex == 0}}" class='tab-main-list pd30 l-infomation'>
         <view class='m-group'>
-          <view class='title'>{{station[lineIndex].line_station[stationKey].name}}<view class='line-title'>{{station[lineIndex].line_name}}</view></view>
-          <view class='subtitle'>{{station[lineIndex].line_station[stationKey].en_name}}</view>
+          <view class='title'>{{stationData.name}}
+            <view class='line-title'>{{stationName}}</view>
+          </view>
+          <view class='subtitle'>{{stationData.en_name}}</view>
           <view class='date-wrap'>
             <!-- <image src='/static/icon/time.png'></image> -->
-            <block wx:for="{{station[lineIndex].line_station[stationKey].running_time}}" wx:key="{{index}}">
+            <block wx:for="{{stationData.running_time}}" wx:key="{{index}}">
               <view class="run-time">
                 <view class='u-dir'>开往
                   <text class='s-strong'>{{item.dir}}</text>方向</view>
@@ -30,13 +34,14 @@
               </view>
             </block>
           </view>
-          <view class='toiler'>厕所位置：{{station[lineIndex].line_station[stationKey].toilet}}</view>
+          <view class='toiler'>厕所位置：{{stationData.toilet}}</view>
           <button class="btn" open-type='share'>分享给朋友</button>
         </view>
       </view>
-      <view wx:if="{{tabIndex == 1}}" class='tab-main-list l-exit'>
+
+      <view wx:if="{{tabIndex == 1}}" class='tab-main-list pd30 l-exit'>
         <view class='m-group'>
-          <view class='exit-list' wx:for="{{station[lineIndex].line_station[stationKey].exit}}" wx:key="{{index}}">
+          <view class='exit-list' wx:for="{{stationData.exit}}" wx:key="{{index}}">
             <view class='exit-hd'>
               <view class='num'>{{item.dir}}</view>
               <view>出口</view>
@@ -44,6 +49,32 @@
             </view>
             <view class='exit-item' wx:for="{{item.intro}}" wx:for-item="dir" wx:key="{{index}}">
               {{dir}}
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view wx:if="{{tabIndex == 2}}" class='tab-main-list l-bus'>
+        <view class="list-box">
+          <view class="item" wx:for="{{pois}}" wx:key="{{index}}">
+            <view class="item-wrap">
+              <view>
+                <view class="title">{{item.name}}
+                  <text class="tips" wx:if="{{index === 0}}">距离最近</text>
+                </view>
+                <view class="infomation">
+                  <text class="distance">距离查询位置{{item.distance}}</text>
+                </view>
+                <view class='bus-tag'>
+                  <text class='bus-tag-item' wx:for="{{item.address}}" wx:for-item="address">{{address}}</text>
+                </view>
+                <view class="u-distance" data-location="{{item.location}}" data-name="{{item.name}}" bindtap="goStation">
+                  <view class="ud-icon">
+                    <image src="/img/line.png"></image>
+                  </view>
+                  <view class="ud-name">路线</view>
+                </view>
+              </view>
             </view>
           </view>
         </view>

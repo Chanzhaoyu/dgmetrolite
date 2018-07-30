@@ -1,0 +1,82 @@
+.item {
+  padding: 0 35rpx;
+}
+
+.item-wrap {
+  padding: 40rpx 96rpx 40rpx 0;
+  border-bottom: 2rpx solid #eaeaea;
+  position: relative;
+}
+
+.title {
+  font-size: 36rpx;
+  height: 60rpx;
+}
+
+.subtitle {
+  font-size: 32rpx;
+}
+
+.u-distance {
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+
+.infomation {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+
+.line-name {
+  color: #fff;
+  background: #e6747d;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+  margin-left: 30rpx;
+  font-size: 24rpx;
+}
+
+
+.bus-tag-item{
+  display: inline-block;
+  padding: 4rpx 8rpx;
+  border: 2rpx solid #b5b5b5;
+  color: #626262;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 15rpx;
+}
+
+.ud-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 10rpx;
+  background: #637285;
+  color: #637285;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.ud-icon image {
+  width: 24rpx;
+  height: 35rpx;
+}
+
+.no-data {
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 100rpx;
+}
+
+.tips {
+  color: #59cfac;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
