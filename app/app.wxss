@@ -1,4 +1,5 @@
 @import "/style/rest.wxss";
+
 /* 线路选择样式 */
 @import "/style/line_change.wxss";
 
@@ -9,6 +10,15 @@ page {
 
 .container {
   padding: 0 30rpx;
+}
+
+.view-tips {
+  padding: 0 20rpx;
+  font-size: 26rpx;
+  line-height: 70rpx;
+  background: rgba(52, 152, 219, 0.1);
+  color: rgba(52, 152, 219, 1);
+  text-align: center;
 }
 
 .u-shadow {

@@ -1,5 +1,8 @@
-<view class="main">
+<view class="main" wx:if="{{modalMask}}">
   <view class="map-box" hidden="{{!arrow}}">
+    <view class="view-tips">
+      <text>下拉获取更新定位信息！</text>
+    </view>
     <map id="map" longitude="{{location.lng}}" latitude="{{location.lat}}" markers="{{markers}}" scale="{{scale}}"></map>
   </view>
   <block wx:if="{{station}}">

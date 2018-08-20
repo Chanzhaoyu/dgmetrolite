@@ -1,5 +1,5 @@
 var config = {
-  key: '57a866409709203d5a20dbbac0f9e1bf'
+  key: '27d1827d9e2e058bb05132878f18cffb'
 }
 
 module.exports.Config = config;

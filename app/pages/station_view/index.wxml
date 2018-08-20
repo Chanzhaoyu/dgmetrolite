@@ -1,13 +1,13 @@
-<view class="main">
-  <block wx:if="{{mapHidden}}">
-    <map id="map" longitude="{{stationData.longitude}}" latitude="{{stationData.latitude}}" scale="17"></map>
+<view class="main" wx:if="{{modalMask}}">
+  <view hidden="{{mapHidden}}">
+    <map id="map" longitude="{{stationData.longitude}}" latitude="{{stationData.latitude}}" scale="17" markers="{{markers}}"></map>
     <view class='map-controls u-shadow pd30'>
       <view class='mc-item view-map' bindtap='viewLine' data-url="http://9me9em.m9.magic2008.cn/ufile/59795/img/map.png">
         <image src='/static/icon/v_map.png'></image>查看线路</view>
       <view class='mc-item full-screen' bindtap='toStation' data-name="{{stationData.name}}" data-en="{{stationData.en_name}}" data-lon="{{stationData.longitude}}" data-lat="{{stationData.latitude}}">
         <image src='/static/icon/f_screen.png'></image>全屏导航</view>
     </view>
-  </block>
+  </view>
   <view class='g-main'>
     <view class='m-tab'>
       <view class='tab-list {{ tabIndex == 0 ? "tab-active" : "" }}' bindtap="tabChange" data-index="0">首末班车</view>
@@ -35,7 +35,10 @@
             </block>
           </view>
           <view class='toiler'>厕所位置：{{stationData.toilet}}</view>
-          <button class="btn" open-type='share' data-option="{{options}}">分享给朋友</button>
+          <view class='btn-group'>
+            <view class='btn b-back' bindtap='goPage'>返回首页</view>
+            <button class="btn" open-type='share' data-option="{{options}}">分享给朋友</button>
+          </view>
         </view>
       </view>
 
@@ -66,7 +69,7 @@
                   <text class="distance">距离查询位置{{item.distance}}</text>
                 </view>
                 <view class='bus-tag'>
-                  <text class='bus-tag-item' wx:for="{{item.address}}" wx:for-item="address">{{address}}</text>
+                  <text class='bus-tag-item' wx:for="{{item.address}}" wx:key="{{index}}" wx:for-item="address">{{address}}</text>
                 </view>
                 <view class="u-distance" data-location="{{item.location}}" data-name="{{item.name}}" bindtap="goStation">
                   <view class="ud-icon">

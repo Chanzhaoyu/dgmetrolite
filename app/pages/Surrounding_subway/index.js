@@ -3,6 +3,7 @@ Page({
     markers: [],
     location: [],
     station: [],
+    modalMask: false,
     scale: 14,
     arrow: true
   },
@@ -10,23 +11,36 @@ Page({
 
     var that = this;
 
-    var location = wx.getStorageSync('location');
+    wx.showLoading({
+      title: '加载数据中...'
+    })
 
-
-    var position = {};
-
-    if (location) {
-      position = {
-        'lng': location.lng,
-        'lat': location.lat
+    wx.getLocation({
+      type: 'gcj02',
+      success: function(res) {
+        that.getLocationFn(res.longitude, res.latitude)
+      },
+      fail: function(info) {
+        console.log('获取失败')
       }
-    }
+    })
 
+  },
+  // 伸缩 & 展开
+  bindArrow() {
+    var flag = this.data.arrow;
+    this.setData({
+      arrow: !flag
+    })
+  },
+  // 请求数据
+  getLocationFn(lng, lat) {
+    let that = this;
     wx.request({
       url: 'https://restapi.amap.com/v3/place/around',
       data: {
         key: '27d1827d9e2e058bb05132878f18cffb',
-        location: position.lng + ',' + position.lat,
+        location: lng + ',' + lat,
         keywords: '地铁',
         types: 150500,
         city: '东莞'
@@ -54,23 +68,23 @@ Page({
               })
             }
           }
+          var position = {
+            lng: lng,
+            lat: lat
+          }
           that.setData({
             markers: poisData,
             location: position,
-            station: stationData
+            station: stationData,
+            modalMask: true
           })
+          wx.hideLoading()
+          wx.stopPullDownRefresh();
         }
       }
     })
-
   },
-  // 伸缩 & 展开
-  bindArrow() {
-    var flag = this.data.arrow;
-    this.setData({
-      arrow: !flag
-    })
-  },
+  // 前往站点
   goStation(e) {
     var location = (e.currentTarget.dataset.location).split(',');
     var name = e.currentTarget.dataset.name;
@@ -79,5 +93,8 @@ Page({
       longitude: parseFloat(location[0]),
       name: name
     })
+  },
+  onPullDownRefresh(){
+    this.onLoad();
   }
 })

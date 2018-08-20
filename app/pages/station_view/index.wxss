@@ -2,7 +2,7 @@
 
 #map {
   width: 100%;
-  height: 500rpx;
+  height: 480rpx;
 }
 
 /* 地图按钮 */
@@ -248,4 +248,20 @@
 
 .item-wrap .title{
   color: #3498db;
+}
+
+/* 两个按钮 */
+.btn-group{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-group .btn{
+  width: 48%;
+}
+
+.btn-group .b-back{
+  background: #e74c3c;
 }

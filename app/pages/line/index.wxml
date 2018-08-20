@@ -1,3 +1,6 @@
+<view class="view-tips">
+  <text>点击站点名可查看详细信息！</text>
+</view>
 <view class="line-selection">
   <view class="left-nav">
     <scroll-view scroll-y>
