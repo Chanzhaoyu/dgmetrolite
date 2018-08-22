@@ -35,3 +35,19 @@ page {
   font-size: 30rpx;
   letter-spacing: 5rpx;
 }
+
+/* 两个按钮 */
+.btn-group{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-group .btn{
+  width: 48%;
+}
+
+.btn-group .b-back{
+  background: #e74c3c;
+}

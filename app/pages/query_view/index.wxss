@@ -1,0 +1,179 @@
+page {
+  background: #f1f1f1;
+}
+
+.main {
+  font-size: 30rpx;
+}
+
+.qv-hd {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 36rpx 20rpx;
+  background-color: #fff;
+  z-index: 50;
+  border-bottom: 2rpx solid #ededed;
+}
+
+.line-name {
+  margin-bottom: 20rpx;
+  font-size: 36rpx;
+  color: #000;
+}
+
+.line-tag {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.line-tag view {
+  margin-right: 30rpx;
+}
+
+.qv-bd {
+  padding-top: 210rpx;
+}
+
+.wrap {
+  padding: 40rpx 0;
+  background: #fff;
+}
+
+.nv-start, .nv-end {
+  padding-left: 180rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 700;
+  position: relative;
+}
+
+.nv-start:before, .nv-end:before {
+  content: "";
+  width: 18rpx;
+  height: 18rpx;
+  display: block;
+  border: 6rpx solid #418aec;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 124rpx;
+  transform: translateY(-50%)
+}
+
+.nv-end:before{
+  border-color: #ff4743;
+}
+
+.nv-start view {
+  border-bottom: 2rpx solid #e6e6e6;
+}
+
+.nv-end view {
+  border-top: 2rpx solid #e6e6e6;
+}
+
+.navi-bd {
+  position: relative;
+  padding-left: 140rpx;
+  color: #999;
+}
+
+.navi-inst {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 140rpx;
+  height: 100%;
+  border-right: 6rpx solid #418aec;
+  color: #418aec;
+  box-sizing: border-box;
+}
+
+.navi-inst image{
+  width: 80rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.navi-content {
+  padding: 20rpx;
+  padding-left: 40rpx;
+  background: rgba(65, 138, 236, 0.1);
+  position: relative;
+}
+
+.navi-content::before, .navi-content::after {
+  content: "";
+  display: block;
+  width: 12rpx;
+  height: 12rpx;
+  background: #fff;
+  border: 2rpx solid #418aec;
+  border-radius: 50%;
+  position: absolute;
+  left: -9rpx;
+}
+
+.navi-content::before {
+  top: -9rpx;
+}
+
+.navi-content::after {
+  bottom: -9rpx;
+}
+
+.s-origin, .s-end {
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+
+.s-origin .s-strong, .s-end .s-strong {
+  font-weight: 700;
+  color: #333;
+  margin-right: 8rpx;
+}
+
+.s-navi-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.s-intro text {
+  display: inline-block;
+  margin-right: 10rpx;
+  color: #999;
+}
+
+.s-navi-info {
+  line-height: 60rpx;
+}
+
+.s-navi-passby {
+  line-height: 50rpx;
+}
+
+.s-toggle {
+  align-items: center;
+}
+
+.s-toggle-down image {
+  transform: rotate(180deg);
+}
+
+.s-toggle image {
+  width: 36rpx;
+  margin-left: 10rpx;
+}
+
+.btn-wrap{
+  padding: 0 20rpx;
+}

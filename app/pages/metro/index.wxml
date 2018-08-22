@@ -11,7 +11,7 @@
       <view class='pick-wrap' bindtap='choseAddress' data-type="origin">
         <view class='name'>起点</view>
         <view class='intro' wx:if="{{!location.origin.name}}">
-          <text class='mark'>我的位置</text>
+          <text>请选择起点</text>
         </view>
         <view class='intro' wx:else>{{location.origin.name}}</view>
         <image src="/static/icon/arrow.png"></image>
@@ -23,26 +23,18 @@
         <view class='intro' wx:if="{{!location.end}}">请选择终点</view>
         <view class='intro' wx:elif="{{location.end.name}}">{{location.end.name}}</view>
         <view class='intro' wx:else>
-          <text class='mark'>我的位置</text>
+          <text>我的位置</text>
         </view>
         <image src="/static/icon/arrow.png"></image>
       </view>
     </view>
-    <view class='reversal' bindtap='reversalStaion'>
+    <!-- <view class='reversal' bindtap='reversalStaion'>
       <image src='/static/icon/rotate.png'></image>
-    </view>
+    </view> -->
     <view class='btn' bindtap='bindQuery'>确认查询</view>
   </view>
   <view class='g-menu'>
     <view class='menu-wrap u-shadow'>
-      <view class='menu-item' bindtap="toPage" data-url="/pages/line/index">
-        <image class='menu-icon' src="/static/icon/m-zdcx.png"></image>
-        <view class='menu-name'>站点查询</view>
-      </view>
-      <view class='menu-item' bindtap="toPage" data-url="/pages/Surrounding_subway/index">
-        <image class='menu-icon' src="/static/icon/m-fjzd.png"></image>
-        <view class='menu-name'>附近站点</view>
-      </view>
       <view class='menu-item' bindtap="toPage" data-url="/pages/subway_map/index">
         <image class='menu-icon' src="/static/icon/m-dtt.png"></image>
         <view class='menu-name'>地铁图</view>
@@ -52,6 +44,34 @@
         <view class='menu-name'>推荐好友</view>
         <button plain class='share-btn' open-type='share'></button>
       </view>
+      <view class='menu-item' bindtap="toPage" data-url="/pages/ticket/index">
+        <image class='menu-icon' src="/static/icon/m-ticket.png"></image>
+        <view class='menu-name'>票价指引</view>
+      </view>
+      <view class='menu-item' bindtap="toPage" data-url="/pages/about/index">
+        <image class='menu-icon' src="/static/icon/m-about.png"></image>
+        <view class='menu-name'>建议反馈</view>
+      </view>
     </view>
+  </view>
+</view>
+
+
+<!-- 线路 -->
+<view class="line-selection" wx:if="{{lineMask}}">
+  <view class="left-nav">
+    <scroll-view scroll-y>
+      <view class="nav-item" style="{{ index == lineIndex ? 'border-left-color:'+item.line_color : ''  }}" wx:for="{{station}}" wx:key="{{index}}" data-index="{{index}}" data-lineColor="{{item.line_color}}" bindtap="lineBind">
+        <view class="u-circle" style="background: {{item.line_color}}"></view>
+        {{item.line_name}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class="right-con">
+    <scroll-view scroll-y>
+      <view class="list-item" wx:for="{{station[lineIndex].line_station}}" wx:key="{{index}}" data-key="{{index+1}}" data-name="{{item.name}}" data-lat="{{item.latitude}}" data-lng="{{item.longitude}}" bindtap="choseValue">
+        {{item.name}}
+      </view>
+    </scroll-view>
   </view>
 </view>

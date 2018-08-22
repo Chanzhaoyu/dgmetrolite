@@ -1,0 +1,6 @@
+image{
+  width: 100%;
+}
+.btn{
+  margin-top: 30rpx;
+}

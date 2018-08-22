@@ -1,11 +1,14 @@
 {
   "pages": [
+    "pages/metro/index",
     "pages/line/index",
     "pages/Surrounding_subway/index",
     "pages/station_view/index",
     "pages/navigation_bus/index",
     "pages/subway_map/index",
-    "pages/metro/index"
+    "pages/query_view/index",
+    "pages/about/index",
+    "pages/ticket/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,6 +22,12 @@
     "selectedColor": "#3498db",
     "list": [
       {
+        "pagePath": "pages/metro/index",
+        "text": "线路查询",
+        "iconPath": "/static/tabBar/n_line.png",
+        "selectedIconPath": "/static/tabBar/s_line.png"
+      },
+      {
         "pagePath": "pages/line/index",
         "text": "站点信息",
         "iconPath": "/static/tabBar/n_metro.png",
@@ -29,12 +38,6 @@
         "text": "附近地铁",
         "iconPath": "/static/tabBar/n_station.png",
         "selectedIconPath": "/static/tabBar/s_station.png"
-      },
-      {
-        "pagePath": "pages/subway_map/index",
-        "text": "线路图",
-        "iconPath": "/static/tabBar/n_line.png",
-        "selectedIconPath": "/static/tabBar/s_line.png"
       }
     ]
   }

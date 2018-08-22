@@ -38,7 +38,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  width: calc(100% - 100rpx);
+  width: 100%;
   height: 2rpx;
   background: #c9c9c9;
   z-index: 9;
@@ -79,11 +79,11 @@
   overflow: hidden;
 }
 
-.pick-wrap .mark{
+.pick-wrap .mark {
   color: #3498db;
 }
 
-.pick-wrap .disable{
+.pick-wrap .disable {
   color: #888;
 }
 
@@ -98,7 +98,6 @@
 .menu-wrap {
   background: #fff;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 

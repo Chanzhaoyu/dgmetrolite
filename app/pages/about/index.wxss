@@ -1,0 +1,21 @@
+page{
+  background: #fff;
+}
+
+.main{
+  padding: 30rpx;
+}
+
+.msg-wrap{
+  font-size: 32rpx;
+  color: #666;
+  text-align: center
+}
+
+.msg-wrap view{
+  margin-bottom: 20rpx;
+}
+
+.btn{
+  margin-top: 30rpx;
+}

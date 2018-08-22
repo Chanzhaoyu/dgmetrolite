@@ -1,0 +1,8 @@
+<view class="main">
+  <view class="msg-wrap">
+    <view>感谢您的使用!</view>
+    <view>如果有好的建议或者数据错误,请联系微信【cz_duck】反馈。</view>
+    <view>谢谢..</view>
+  </view>
+  <view class="btn" bindtap="copyId">复制微信号到剪切板</view>
+</view>

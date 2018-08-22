@@ -1,0 +1,56 @@
+<view class="main" wx:if="{{modelMask}}">
+  <view class="qv-hd">
+    <view class="line-name">{{value.title}}</view>
+    <view class="line-tag">
+      <view class="t-time">{{value.duration}}分钟</view>
+      <!-- <view class="t-price">7元</view> -->
+      <view class="t-count">共{{value.stations.length + 1}}站</view>
+    </view>
+  </view>
+  <view class="qv-bd">
+    <view class="wrap">
+      <view class="navi-box">
+        <view class="nv-start">
+          <view>{{value.geton.title}}(地铁站)</view>
+        </view>
+      </view>
+      <view class="navi-bd">
+        <view class="navi-inst">
+          <image src="/static/tabBar/s_metro.png" mode="widthFix"></image>
+        </view>
+        <view class="navi-content">
+          <view class="s-origin">
+            <view>
+              <text class="s-strong">{{value.geton.title}}</text>上车</view>
+          </view>
+          <view class="s-navi-info">
+            <view class="s-intro">
+              <text>开往 {{value.destination.title}} 方向</text>
+            </view>
+            <view bindtap="bindToggle" class="s-toggle {{!stationToggle ? 's-toggle-down' : ''}}" wx:if="{{value.stations.length > 1}}">经过{{value.stations.length-1}}站
+              <image mode="widthFix" src="/static/icon/down.png"></image>
+            </view>
+          </view>
+          <view class="s-navi-passby">
+            <view wx:if="{{stationToggle}}" wx:for="{{value.stations}}" wx:key="{{index}}" hidden="{{index == value.stations.length-1}}">{{item.title}}</view>
+          </view>
+          <view class="s-end">
+            <view>
+              <text class="s-strong">{{value.getoff.title}}</text>下车</view>
+          </view>
+        </view>
+      </view>
+      <view class="navi-box">
+        <view class="nv-end">
+          <view>{{value.getoff.title}}(地铁站)</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn-wrap">
+    <view class='btn-group'>
+      <view class='btn b-back' bindtap='goPage'>返回首页</view>
+      <button class="btn" open-type='share' data-option="{{options}}">分享给朋友</button>
+    </view>
+  </view>
+</view>
