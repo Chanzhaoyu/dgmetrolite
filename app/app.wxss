@@ -16,7 +16,7 @@ page {
   padding: 0 20rpx;
   font-size: 26rpx;
   line-height: 70rpx;
-  background: rgba(52, 152, 219, 0.1);
+  background: rgba(37, 132, 196, 0.1);
   color: rgba(52, 152, 219, 1);
   text-align: center;
 }
@@ -37,17 +37,28 @@ page {
 }
 
 /* 两个按钮 */
-.btn-group{
+
+.btn-group {
   margin-top: 30rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.btn-group .btn{
+.btn-group .btn {
   width: 48%;
 }
 
-.btn-group .b-back{
+.btn-group .b-back {
   background: #e74c3c;
+}
+
+/* 广告样式 */
+
+.ad-wrap-fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
 }

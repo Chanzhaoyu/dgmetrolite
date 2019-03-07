@@ -2,7 +2,7 @@ var station = [{
   "line_name": '2号线',
   "line_color": "#c72e29",
   "line_station": [{
-    "name": "东莞火车站",
+    "name": "东莞火车站（广深和谐号）",
     "en_name": "Dongguan Railway Station",
     "running_time": [{
       "start": "06:30",
@@ -224,7 +224,7 @@ var station = [{
       "intro": ["东莞大道东侧", "怡丰路", "鸿福东路", "银树路"]
     }]
   }, {
-    "name": "西平",
+    "name": "西平（莞惠城际铁路）",
     "en_name": "Xiping",
     "running_time": [{
       "start": "06:40",
@@ -247,7 +247,7 @@ var station = [{
     }]
   }, {
     "name": "蛤地",
-    "en_name": "Hadi",
+    "en_name": "Gedi",
     "running_time": [{
       "start": "06:37",
       "end": "22:46",
@@ -380,7 +380,7 @@ var station = [{
       "intro": ["莞太路", "会展东路", "南五文化公园", "南五村"]
     }]
   }, {
-    "name": "虎门火车站",
+    "name": "虎门火车站（高铁站）",
     "en_name": "HuMen Railway Station",
     "running_time": [{
       "start": "06:30",

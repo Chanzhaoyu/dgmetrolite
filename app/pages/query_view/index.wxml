@@ -53,4 +53,7 @@
       <button class="btn" open-type='share' data-option="{{options}}">分享给朋友</button>
     </view>
   </view>
+  <view class="ad-wrap">
+    <ad unit-id="adunit-db8889012d795cfe"></ad>
+  </view>
 </view>

@@ -83,5 +83,9 @@
         </view>
       </view>
     </view>
+
+    <view class="ad-wrap">
+      <ad unit-id="adunit-db8889012d795cfe"></ad>
+    </view>
   </view>
 </view>

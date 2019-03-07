@@ -68,14 +68,22 @@
 
 .pick-wrap .name {
   color: #444;
-  font-size: 28rpx;
+  font-size: 0;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: rgb(52, 148, 220);
+}
+
+.end-line .name {
+  background: rgb(247, 73, 65);
 }
 
 .pick-wrap .intro {
-  color: #000;
+  color: #666;
   font-size: 30rpx;
   flex: 1;
-  padding: 0 30rpx 0 60rpx;
+  padding: 0 30rpx 0 20rpx;
   overflow: hidden;
 }
 

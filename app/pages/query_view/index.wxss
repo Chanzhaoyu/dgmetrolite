@@ -63,10 +63,10 @@ page {
   position: absolute;
   top: 50%;
   left: 124rpx;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
 }
 
-.nv-end:before{
+.nv-end:before {
   border-color: #ff4743;
 }
 
@@ -95,12 +95,12 @@ page {
   box-sizing: border-box;
 }
 
-.navi-inst image{
+.navi-inst image {
   width: 80rpx;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
 
 .navi-content {
@@ -174,6 +174,7 @@ page {
   margin-left: 10rpx;
 }
 
-.btn-wrap{
+.btn-wrap {
   padding: 0 20rpx;
+  margin-bottom: 30rpx;
 }

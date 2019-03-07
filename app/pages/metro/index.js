@@ -85,7 +85,7 @@ Page({
   },
   onShareAppMessage(e) {
     return {
-      title: '东莞地铁信息',
+      title: '东莞地铁出行',
       path: '/pages/metro/index'
     }
   }
