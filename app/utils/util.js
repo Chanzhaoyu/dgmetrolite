@@ -6,12 +6,12 @@ function getCommand(url, data = {}, success, fail) {
     header: {
       'content-Type': 'application/json'
     }, // 设置请求的 header
-    success: function(res) {
+    success: function (res) {
       if (res.statusCode == 200 && res.data != "") {
         success(res.data);
       }
     },
-    fail: function(info) {
+    fail: function (info) {
       fail(info)
     }
   })

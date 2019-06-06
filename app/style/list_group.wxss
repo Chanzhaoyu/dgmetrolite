@@ -41,7 +41,7 @@
 }
 
 
-.bus-tag-item{
+.bus-tag-item {
   display: inline-block;
   padding: 4rpx 8rpx;
   border: 2rpx solid #b5b5b5;

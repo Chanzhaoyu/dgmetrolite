@@ -58,8 +58,6 @@
     <ad unit-id="adunit-db8889012d795cfe"></ad>
   </view>
 </view>
-
-
 <!-- 线路 -->
 <view class="line-selection" wx:if="{{lineMask}}">
   <view class="left-nav">

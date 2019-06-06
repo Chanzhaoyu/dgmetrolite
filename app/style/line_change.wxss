@@ -17,7 +17,8 @@
   height: 100%;
 }
 
-.left-nav .nav-item, .right-con .list-item {
+.left-nav .nav-item,
+.right-con .list-item {
   height: 80rpx;
   line-height: 80rpx;
   padding: 0 35rpx;
@@ -30,7 +31,8 @@
   border-bottom: 0;
 }
 
-.left-nav, .right-con {
+.left-nav,
+.right-con {
   height: 100%;
 }
 

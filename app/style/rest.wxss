@@ -1,4 +1,5 @@
-.clearfix::before, .clearfix::after {
+.clearfix::before,
+.clearfix::after {
   content: "";
   display: table;
 }
@@ -17,14 +18,14 @@ image {
   box-sizing: border-box;
 }
 
-.pd30{
+.pd30 {
   padding: 0 30rpx;
 }
 
-.pd0{
+.pd0 {
   padding: 0 !important;
 }
 
-.mg0{
+.mg0 {
   margin: 0 !important;
 }
