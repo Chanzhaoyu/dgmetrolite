@@ -4,6 +4,7 @@ let Config = require('../../libs/config.js');
 Page({
   data: {
     tabIndex: 0,
+    dateIndex: 0,
     /*站点遮罩数据*/
     stationName: '',
     stationKey: 0,
@@ -43,7 +44,7 @@ Page({
           types: 150700,
           city: '东莞',
         },
-        success: function(res) {
+        success: function (res) {
           let pois = []
           if (res.data.pois) {
             pois = res.data.pois;
@@ -86,6 +87,12 @@ Page({
 
     this.setData({
       tabIndex: num
+    })
+  },
+  dateTabChange(e) {
+    let num = e.currentTarget.dataset.index;
+    this.setData({
+      dateIndex: num
     })
   },
   toStation(e) {

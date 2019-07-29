@@ -22,6 +22,7 @@
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
   },
+  "navigateToMiniProgramAppIdList":["wx17d034d518940067"],
   "tabBar": {
     "color": "#434343",
     "selectedColor": "#3498db",
@@ -43,6 +44,12 @@
         "text": "附近地铁",
         "iconPath": "/static/tabBar/n_station.png",
         "selectedIconPath": "/static/tabBar/s_station.png"
+      },
+      {
+        "pagePath": "pages/about/index",
+        "text": "关于",
+        "iconPath": "/static/tabBar/n_about.png",
+        "selectedIconPath": "/static/tabBar/s_about.png"
       }
     ]
   },

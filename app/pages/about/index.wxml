@@ -1,8 +1,20 @@
 <view class="main">
   <view class="msg-wrap">
-    <view>感谢您的使用!</view>
-    <view>如果有好的建议或者数据错误,请联系微信【cz_duck】反馈。</view>
-    <view>谢谢..</view>
+    <view class="title">版本：3.20</view>
+    <view class="content">
+      <view>1、更新的站点出口信息至最新。</view>
+      <view>2、更新的工作日，非工作日时刻至最新。</view>
+      <view>3、添加了购物优惠组件。</view>
+      <view>4、修复了部分显示BUG</view>
+    </view>
+    <view class="title">未来更新：</view>
+    <view class="content">
+      <view>1、东莞通查询</view>
+    </view>
+    <view class="title">建议反馈：</view>
+    <view class="content">
+      <view>微信：cz_duck</view>
+      <view>邮箱：790348264@qq.com</view>
+    </view>
   </view>
-  <view class="btn" bindtap="copyId">复制微信号到剪切板</view>
 </view>

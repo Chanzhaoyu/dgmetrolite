@@ -3,36 +3,82 @@
     <map id="map" longitude="{{stationData.longitude}}" latitude="{{stationData.latitude}}" scale="17" markers="{{markers}}"></map>
     <view class='map-controls u-shadow pd30'>
       <view class='mc-item view-map' bindtap='viewLine' data-url="http://9me9em.m9.magic2008.cn/ufile/59795/img/map.png">
-        <image src='/static/icon/v_map.png'></image>查看线路</view>
+        <image src='/static/icon/v_map.png'></image>
+        查看线路
+      </view>
       <view class='mc-item full-screen' bindtap='toStation' data-name="{{stationData.name}}" data-en="{{stationData.en_name}}" data-lon="{{stationData.longitude}}" data-lat="{{stationData.latitude}}">
-        <image src='/static/icon/f_screen.png'></image>全屏导航</view>
+        <image src='/static/icon/f_screen.png'></image>
+        全屏导航
+      </view>
     </view>
   </view>
   <view class='g-main'>
     <view class='m-tab'>
-      <view class='tab-list {{ tabIndex == 0 ? "tab-active" : "" }}' bindtap="tabChange" data-index="0">首末班车</view>
-      <view class='tab-list {{ tabIndex == 1 ? "tab-active" : "" }}' bindtap="tabChange" data-index="1">出口信息</view>
-      <view class='tab-list {{ tabIndex == 2 ? "tab-active" : "" }}' bindtap="tabChange" data-index="2">周边公交</view>
+      <view class='tab-list {{ tabIndex == 0 ? "tab-active" : "" }}' bindtap="tabChange" data-index="0">
+        首末班车
+      </view>
+      <view class='tab-list {{ tabIndex == 1 ? "tab-active" : "" }}' bindtap="tabChange" data-index="1">
+        出口信息
+      </view>
+      <view class='tab-list {{ tabIndex == 2 ? "tab-active" : "" }}' bindtap="tabChange" data-index="2">
+        周边公交
+      </view>
     </view>
     <view class='m-tab-main u-shadow'>
       <view wx:if="{{tabIndex == 0}}" class='tab-main-list pd30 l-infomation'>
         <view class='m-group'>
-          <view class='title'>{{stationData.name}}
+          <view class='title'>
+            {{stationData.name}}
             <view class='line-title'>{{stationName}}</view>
           </view>
           <view class='subtitle'>{{stationData.en_name}}</view>
-          <view class='date-wrap'>
-            <!-- <image src='/static/icon/time.png'></image> -->
-            <block wx:for="{{stationData.running_time}}" wx:key="{{index}}">
-              <view class="run-time">
-                <view class='u-dir'>开往
-                  <text class='s-strong'>{{item.dir}}</text>方向</view>
-                <view class='u-date'>
-                  <text class='u-tag s-start'>首</text>{{item.start}}
-                  <text class='u-tag s-end'>末</text>{{item.end}}
-                </view>
+          <view class='date-tabs'>
+            <view class='dateTabsHead'>
+              <view class="hd-items {{ dateIndex == 0 ? 'hd-active' : '' }}" bindtap="dateTabChange" data-index="0">
+                工作日
               </view>
-            </block>
+              <view class="hd-items {{ dateIndex == 1 ? 'hd-active' : '' }}" bindtap="dateTabChange" data-index="1">
+                非工作日
+              </view>
+            </view>
+            <view class="dateTabsItem" wx:if="{{dateIndex == 0}}">
+              <view class='date-wrap'>
+                <block wx:for="{{stationData.running_time.worker}}" wx:key="{{index}}">
+                  <view class="run-time">
+                    <view class='u-dir'>
+                      开往
+                      <text class='s-strong'>{{item.dir}}</text>
+                      方向
+                    </view>
+                    <view class='u-date'>
+                      <text class='u-tag s-start'>首</text>
+                      {{item.start}}
+                      <text class='u-tag s-end'>末</text>
+                      {{item.end}}
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </view>
+            <view class="dateTabsItem" wx:if="{{dateIndex == 1}}">
+              <view class='date-wrap'>
+                <block wx:for="{{stationData.running_time.unWorker}}" wx:key="{{index}}">
+                  <view class="run-time">
+                    <view class='u-dir'>
+                      开往
+                      <text class='s-strong'>{{item.dir}}</text>
+                      方向
+                    </view>
+                    <view class='u-date'>
+                      <text class='u-tag s-start'>首</text>
+                      {{item.start}}
+                      <text class='u-tag s-end'>末</text>
+                      {{item.end}}
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </view>
           </view>
           <view class='toiler'>厕所位置：{{stationData.toilet}}</view>
           <view class='btn-group'>
@@ -41,7 +87,6 @@
           </view>
         </view>
       </view>
-
       <view wx:if="{{tabIndex == 1}}" class='tab-main-list pd30 l-exit'>
         <view class='m-group'>
           <view class='exit-list' wx:for="{{stationData.exit}}" wx:key="{{index}}">
@@ -56,20 +101,22 @@
           </view>
         </view>
       </view>
-
       <view wx:if="{{tabIndex == 2}}" class='tab-main-list l-bus'>
         <view class="list-box">
           <view class="item" wx:for="{{pois}}" wx:key="{{index}}">
             <view class="item-wrap">
               <view>
-                <view class="title">{{item.name}}
+                <view class="title">
+                  {{item.name}}
                   <text class="tips" wx:if="{{index === 0}}">距离最近</text>
                 </view>
                 <view class="infomation">
                   <text class="distance">距离查询位置{{item.distance}}</text>
                 </view>
                 <view class='bus-tag'>
-                  <text class='bus-tag-item' wx:for="{{item.address}}" wx:key="{{index}}" wx:for-item="address">{{address}}</text>
+                  <text class='bus-tag-item' wx:for="{{item.address}}" wx:key="{{index}}" wx:for-item="address">
+                    {{address}}
+                  </text>
                 </view>
                 <view class="u-distance" data-location="{{item.location}}" data-name="{{item.name}}" bindtap="goStation">
                   <view class="ud-icon">
@@ -83,7 +130,6 @@
         </view>
       </view>
     </view>
-
     <view class="ad-wrap">
       <ad unit-id="adunit-db8889012d795cfe"></ad>
     </view>

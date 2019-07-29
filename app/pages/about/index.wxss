@@ -1,21 +1,36 @@
-page{
+page {
   background: #fff;
 }
 
-.main{
+.main {
   padding: 30rpx;
 }
 
-.msg-wrap{
+.msg-wrap {
   font-size: 32rpx;
   color: #666;
-  text-align: center
 }
-
-.msg-wrap view{
-  margin-bottom: 20rpx;
-}
-
-.btn{
+.btn {
   margin-top: 30rpx;
+}
+
+.t-center {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+}
+
+.title {
+  padding: 20rpx 20rpx;
+  margin-bottom: 10px;
+  background: rgba(52, 152, 219, 1);
+  color: #fff;
+}
+
+.content {
+  margin-bottom: 30rpx;
+}
+
+.content view{
+  margin-bottom: 20rpx;
 }

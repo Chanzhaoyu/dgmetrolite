@@ -48,9 +48,11 @@
         <image class='menu-icon' src="/static/icon/m-ticket.png"></image>
         <view class='menu-name'>票价指引</view>
       </view>
-      <view class='menu-item' bindtap="toPage" data-url="/pages/about/index">
-        <image class='menu-icon' src="/static/icon/m-about.png"></image>
-        <view class='menu-name'>建议反馈</view>
+      <view class='menu-item'>
+        <navigator target="miniProgram" app-id="wx17d034d518940067" path="mayiwo/pages/index/index?from_id=40" extra-data="" bindsuccess="jumpMiniProgram">
+          <image class='menu-icon' src="/static/icon/hzk.png"></image>
+          <view class='menu-name'>购物折惠</view>
+        </navigator>
       </view>
     </view>
   </view>

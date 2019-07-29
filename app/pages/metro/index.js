@@ -34,6 +34,10 @@ Page({
       })
     }
   },
+  // 跳转小程序
+  jumpMiniProgram() {
+    console.log('成功')
+  },
   bindQuery() {
     let location = this.data.location;
     if (!location.origin) {
@@ -42,6 +46,8 @@ Page({
     } else if (!location.end) {
       this.showModal('请选择终点')
       return;
+    } else if (location.origin.name == location.end.name) {
+      this.showModal('不能选择同一站点')
     } else {
       wx.navigateTo({
         url: '/pages/query_view/index?origin=' + location.origin.location + '&end=' + location.end.location,
@@ -71,10 +77,18 @@ Page({
   },
   // 快捷菜单跳转
   toPage(e) {
+    let type = e.currentTarget.dataset.type;
     let url = e.currentTarget.dataset.url;
-    wx.navigateTo({
-      url: url
-    })
+    if (type === 'bar') {
+      wx.switchTab({
+        url: url
+      })
+    } else {
+      wx.navigateTo({
+        url: url
+      })
+    }
+
   },
   showModal(c, t) {
     wx.showModal({
